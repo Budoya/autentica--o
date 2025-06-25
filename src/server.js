@@ -10,12 +10,13 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(express.urlencoded({ extended: true }))
 
 app.use(session({
-  secret: 'palavra-chave-secreta', // 934fn394f8bn09awefh9un8bw8ef
+  secret: 'palavra-chave-secreta',
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false }
+  cookie: { secure: false } // em produção, use true em HTTPS
 }))
 
 app.use(router)
 
-app.listen(3000, () => console.log(`Servidor inciado em <http://localhost>:${PORT}/`))
+const PORT = 3000;
+app.listen(PORT, () => console.log(`Servidor iniciado em http://localhost:${PORT}/`))

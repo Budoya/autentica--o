@@ -1,7 +1,7 @@
 module.exports = {
   dashboard: (req, res) => {
-    console.log(req.session.authenticated)
-    console.log(req.session.currentUser)
+    if (!req.session.authenticated) return res.redirect('/')
+
     res.render('dashboard', { user: req.session.currentUser })
   }
 }

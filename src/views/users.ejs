@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Usuários Registrados</title>
+</head>
+<body>
+  <h1>Usuários Registrados</h1>
+  <table border="1" cellpadding="10">
+    <thead>
+      <tr>
+        <th>Usuário</th>
+        <th>Função</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+        <tr>
+          <td><%= user.username %></td>
+          <td><%= user.role %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <br>
+  <a href="/dashboard">Voltar ao Dashboard</a>
+</body>
+</html>
